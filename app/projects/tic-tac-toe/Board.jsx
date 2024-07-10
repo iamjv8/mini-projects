@@ -51,6 +51,8 @@ const Board = () => {
 
   return (
     <div className={styles.boardContainer}>
+      <h1>Tic Tac Toe</h1>
+      <br />
       {winner || gameStatus ? (
         <>
           {gameStatus == "Draw" ? <>Game Draw</> : <>Winner is : {winner}</>}{" "}
