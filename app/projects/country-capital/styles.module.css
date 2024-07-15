@@ -1,0 +1,15 @@
+.container {
+  padding: 20px;
+}
+.button {
+  background-color: aquamarine;
+  border: 1px solid;
+  margin: 10px;
+  height: 40px;
+  width: 80px;
+}
+
+.button:hover {
+  border: 1px solid rgb(189, 127, 255);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
