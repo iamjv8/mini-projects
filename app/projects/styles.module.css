@@ -1,0 +1,28 @@
+.container {
+  height: 600px;
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  flex-direction: column;
+  align-items: center;
+}
+.container h1 {
+  margin: 10px;
+}
+
+.projectContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  justify-content: space-evenly;
+  justify-items: center;
+}
+.card {
+  height: 80px;
+  width: auto;
+  border: 1px solid #3e3e3e;
+  border-radius: 5px;
+}

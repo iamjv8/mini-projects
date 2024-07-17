@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
 export default function Home() {
   return (
@@ -29,13 +30,10 @@ export default function Home() {
       </div>
 
       <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          rel="noopener noreferrer"
-        >
+        <Link href="/projects" className={styles.card}>
           <h3>Click here to get Started</h3>
-        </a>
+        </Link>
+
         {/* 
         <a
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
