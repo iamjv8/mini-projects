@@ -15,4 +15,8 @@ export const projects = [
     name: "Country Capital Game",
     url: "/country-capital",
   },
+  {
+    name: "Sidebar",
+    url: "/sidebar",
+  },
 ];

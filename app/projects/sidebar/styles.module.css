@@ -1,0 +1,32 @@
+.container {
+  padding: 20px;
+}
+.nodes li {
+  list-style: none;
+}
+
+.nodes li a {
+  color: #0097e6;
+  text-decoration: none;
+  padding-left: 6px;
+}
+.nodes li a:hover {
+  text-decoration: underline;
+}
+
+.node .label {
+  display: flex;
+  align-items: center;
+}
+
+.node .circleIcon {
+  height: 8px;
+}
+.node .arrowIcon {
+  height: 15px;
+  cursor: pointer;
+}
+
+.nodeContent {
+  padding-left: 20px;
+}
