@@ -19,4 +19,8 @@ export const projects = [
     name: "Sidebar",
     url: "/sidebar",
   },
+  {
+    name: "Country List",
+    url: "/country-list",
+  },
 ];

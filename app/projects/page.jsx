@@ -1,44 +1,86 @@
 import Link from "next/link";
 import { projects } from "./projects";
+import {
+  Container,
+  Card,
+  CardContent,
+  Box,
+  Grid,
+  Typography,
+} from "@mui/material";
 import styles from "./styles.module.css";
-const ProjectCard = ({ name, url }) => {
+const ProjectCard = ({ name, url, index }) => {
   return (
-    <div class="space-y-8 xl:row-span-2">
-      <Link href={url}>
-        <figure class="rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5 flex justify-center hover:bg-cyan-500">
-          <blockquote class="text-gray-900">
-            <p className="text-lg font-bold ">{name}</p>
-          </blockquote>
-        </figure>
-      </Link>
-    </div>
+    // <div class="space-y-8 xl:row-span-2">
+    //   <Link href={url}>
+    //     <figure class="rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5 flex justify-center hover:bg-cyan-500">
+    //       <blockquote class="text-gray-900">
+    //         <p className="text-lg font-bold ">{name}</p>
+    //       </blockquote>
+    //     </figure>
+    //   </Link>
+    // </div>
+
+    <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: "flex" }}>
+      <Card
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          flexGrow: 1,
+          p: 1,
+        }}
+      >
+        <Link href={url}>
+          <CardContent>
+            <Typography component="h4" variant="h6" color="text.primary">
+              {name}
+            </Typography>
+          </CardContent>
+        </Link>
+      </Card>
+    </Grid>
   );
 };
 
 const Page = () => {
   return (
-    <div class="relative isolate bg-cyan-400 pb-32 pt-24 sm:pt-32">
-      <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-xl text-center">
-          <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Mini Projects
-          </p>
-        </div>
-        <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
-          <div class="space-y-8 xl:contents xl:space-y-0">
-            {projects.map((item, index) => {
-              return (
-                <ProjectCard
-                  key={index}
-                  name={item.name}
-                  url={`/projects${item.url}`}
-                />
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    </div>
+    <Container
+      id="testimonials"
+      sx={{
+        pt: { xs: 4, sm: 12 },
+        pb: { xs: 8, sm: 16 },
+        position: "relative",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: { xs: 3, sm: 6 },
+      }}
+      className={styles.container}
+    >
+      <Box
+        sx={{
+          width: { sm: "100%", md: "60%" },
+          textAlign: { sm: "left", md: "center" },
+        }}
+      >
+        <Typography component="h2" variant="h4" color="text.primary">
+          Projects
+        </Typography>
+      </Box>
+      <Grid container spacing={2}>
+        {projects.map((item, index) => {
+          return (
+            <ProjectCard
+              key={index}
+              name={item.name}
+              url={`/projects${item.url}`}
+              index={index}
+            />
+          );
+        })}
+      </Grid>
+    </Container>
   );
 };
 

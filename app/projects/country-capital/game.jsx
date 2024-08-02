@@ -35,7 +35,7 @@ const Game = ({ data }) => {
   const checkPair = () => {
     if (data[selectedButtons[0]]) {
       if (data[selectedButtons[0]] == selectedButtons[1]) {
-        console.log("Matched");
+        console.log("Matched", randomButtons);
         randomButtons.splice(randomButtons.indexOf(selectedButtons[0]), 1);
       }
     }
